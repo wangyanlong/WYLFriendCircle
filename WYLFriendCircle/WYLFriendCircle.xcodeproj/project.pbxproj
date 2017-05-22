@@ -13,6 +13,8 @@
 		184DCE1B1ED2FA760087BE4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184DCE191ED2FA760087BE4C /* Main.storyboard */; };
 		184DCE1D1ED2FA760087BE4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 184DCE1C1ED2FA760087BE4C /* Assets.xcassets */; };
 		184DCE201ED2FA760087BE4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184DCE1E1ED2FA760087BE4C /* LaunchScreen.storyboard */; };
+		184DCE2A1ED2FEB80087BE4C /* WYLFriendCircleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 184DCE291ED2FEB80087BE4C /* WYLFriendCircleVC.m */; };
+		184DCE2E1ED3012E0087BE4C /* FriendCircleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 184DCE2D1ED3012E0087BE4C /* FriendCircleData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		184DCE1C1ED2FA760087BE4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		184DCE1F1ED2FA760087BE4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		184DCE211ED2FA760087BE4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		184DCE281ED2FEB80087BE4C /* WYLFriendCircleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYLFriendCircleVC.h; sourceTree = "<group>"; };
+		184DCE291ED2FEB80087BE4C /* WYLFriendCircleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYLFriendCircleVC.m; sourceTree = "<group>"; };
+		184DCE2C1ED3012E0087BE4C /* FriendCircleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleData.h; sourceTree = "<group>"; };
+		184DCE2D1ED3012E0087BE4C /* FriendCircleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		184DCE0F1ED2FA760087BE4C /* WYLFriendCircle */ = {
 			isa = PBXGroup;
 			children = (
+				184DCE271ED2FE9B0087BE4C /* WYLFriendCircle */,
 				184DCE131ED2FA760087BE4C /* AppDelegate.h */,
 				184DCE141ED2FA760087BE4C /* AppDelegate.m */,
 				184DCE161ED2FA760087BE4C /* ViewController.h */,
@@ -77,6 +84,25 @@
 				184DCE111ED2FA760087BE4C /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		184DCE271ED2FE9B0087BE4C /* WYLFriendCircle */ = {
+			isa = PBXGroup;
+			children = (
+				184DCE2B1ED301060087BE4C /* FalseData */,
+				184DCE281ED2FEB80087BE4C /* WYLFriendCircleVC.h */,
+				184DCE291ED2FEB80087BE4C /* WYLFriendCircleVC.m */,
+			);
+			path = WYLFriendCircle;
+			sourceTree = "<group>";
+		};
+		184DCE2B1ED301060087BE4C /* FalseData */ = {
+			isa = PBXGroup;
+			children = (
+				184DCE2C1ED3012E0087BE4C /* FriendCircleData.h */,
+				184DCE2D1ED3012E0087BE4C /* FriendCircleData.m */,
+			);
+			path = FalseData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +178,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				184DCE181ED2FA760087BE4C /* ViewController.m in Sources */,
+				184DCE2E1ED3012E0087BE4C /* FriendCircleData.m in Sources */,
+				184DCE2A1ED2FEB80087BE4C /* WYLFriendCircleVC.m in Sources */,
 				184DCE151ED2FA760087BE4C /* AppDelegate.m in Sources */,
 				184DCE121ED2FA760087BE4C /* main.m in Sources */,
 			);
@@ -312,6 +340,7 @@
 				184DCE261ED2FA760087BE4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

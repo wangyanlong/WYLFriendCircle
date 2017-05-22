@@ -6,6 +6,7 @@
 //  Copyright © 2017年 wyl. All rights reserved.
 //
 
+#import "WYLFriendCircleVC.h"
 #import "ViewController.h"
 
 @interface ViewController ()
@@ -19,6 +20,11 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (IBAction)pressBt:(id)sender{
+ 
+    
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
