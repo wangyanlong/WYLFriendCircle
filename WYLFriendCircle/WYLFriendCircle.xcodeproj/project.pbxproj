@@ -15,6 +15,7 @@
 		184DCE201ED2FA760087BE4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184DCE1E1ED2FA760087BE4C /* LaunchScreen.storyboard */; };
 		184DCE2A1ED2FEB80087BE4C /* WYLFriendCircleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 184DCE291ED2FEB80087BE4C /* WYLFriendCircleVC.m */; };
 		184DCE2E1ED3012E0087BE4C /* FriendCircleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 184DCE2D1ED3012E0087BE4C /* FriendCircleData.m */; };
+		184DCE311ED43FE50087BE4C /* WYLFCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 184DCE301ED43FE50087BE4C /* WYLFCModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		184DCE291ED2FEB80087BE4C /* WYLFriendCircleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYLFriendCircleVC.m; sourceTree = "<group>"; };
 		184DCE2C1ED3012E0087BE4C /* FriendCircleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleData.h; sourceTree = "<group>"; };
 		184DCE2D1ED3012E0087BE4C /* FriendCircleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleData.m; sourceTree = "<group>"; };
+		184DCE2F1ED43FE50087BE4C /* WYLFCModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYLFCModel.h; sourceTree = "<group>"; };
+		184DCE301ED43FE50087BE4C /* WYLFCModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYLFCModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 			children = (
 				184DCE2C1ED3012E0087BE4C /* FriendCircleData.h */,
 				184DCE2D1ED3012E0087BE4C /* FriendCircleData.m */,
+				184DCE2F1ED43FE50087BE4C /* WYLFCModel.h */,
+				184DCE301ED43FE50087BE4C /* WYLFCModel.m */,
 			);
 			path = FalseData;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				184DCE181ED2FA760087BE4C /* ViewController.m in Sources */,
+				184DCE311ED43FE50087BE4C /* WYLFCModel.m in Sources */,
 				184DCE2E1ED3012E0087BE4C /* FriendCircleData.m in Sources */,
 				184DCE2A1ED2FEB80087BE4C /* WYLFriendCircleVC.m in Sources */,
 				184DCE151ED2FA760087BE4C /* AppDelegate.m in Sources */,
