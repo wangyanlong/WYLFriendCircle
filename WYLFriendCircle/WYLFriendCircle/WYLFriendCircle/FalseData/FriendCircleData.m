@@ -11,6 +11,8 @@
 static NSInteger kAllPage = 0;
 static NSMutableArray *imageContentAry;
 static NSMutableArray *textContentAry;
+static NSArray *AllNameAry;
+static NSArray *AllMessageAry;
 
 @implementation FriendCircleData
 
@@ -71,11 +73,41 @@ static NSMutableArray *textContentAry;
     // 链接
     if (modelType == FC_OnlyLinkContent || modelType == FC_TextAndLinkContent) {
         NSMutableDictionary *infoDict = [NSMutableDictionary dictionary];
-        [infoDict setObject:@"八点钟学院" forKey:@"text"];
-        [infoDict setObject:@"http://www.baidu.com" forKey:@"url"];
+        [infoDict setObject:@"U17" forKey:@"text"];
+        [infoDict setObject:@"http://www.u17.com" forKey:@"url"];
         [infoDict setObject:@"logo.png" forKey:@"img"];
         fcModel.linkInfoDict = infoDict;
     }
+    
+    //时间
+    static int __timeStp = 10;
+    fcModel.timeStp = [@(__timeStp++) description];
+    
+    // 留言
+    NSArray *nameAry    = [self backName];
+    NSArray *messageAry = [self backMessageContent];
+    NSInteger messageCount = random()%6;
+    fcModel.messageAry = [NSMutableArray array];
+    //0(楼主回复XX:) 1(XX回复楼主:) 2(楼主回复:) 3(XX回复:)
+    for (int i = 0; i < messageCount; i++) {
+        NSInteger nameIndex = random()%nameAry.count;
+        NSInteger messageIndex = random()%messageAry.count;
+        int status = random()%4;
+        NSMutableDictionary *messDict = [NSMutableDictionary dictionary];
+        [messDict setObject:[nameAry objectAtIndex:nameIndex] forKey:@"name"];
+        [messDict setObject:[messageAry objectAtIndex:messageIndex] forKey:@"msg"];
+        [messDict setObject:[NSString stringWithFormat:@"%d", status] forKey:@"status"];
+        [fcModel.messageAry addObject:messDict];
+    }
+    
+    // 点赞
+    NSInteger approveCount = random()%6;
+    fcModel.approveAry = [NSMutableArray array];
+    for (int i = 0; i < approveCount; i++) {
+        NSInteger nameIndex = random()%nameAry.count;
+        [fcModel.approveAry addObject:[nameAry objectAtIndex:nameIndex]];
+    }
+
     
     return fcModel;
     
@@ -121,6 +153,39 @@ static NSMutableArray *textContentAry;
     
     return backAry;
     
+}
+
++ (NSArray*)backName{
+    if (AllNameAry) {
+        return AllNameAry;
+    }
+    
+    NSString *pathStr = [[NSBundle mainBundle] pathForResource:@"name" ofType:@"txt"];
+    NSError *error = nil;
+    NSString *allUrlStr = [NSString stringWithContentsOfFile:pathStr encoding:NSUTF8StringEncoding error:&error];
+    NSArray *tmpAry = [allUrlStr componentsSeparatedByString:@"\n"];
+    NSMutableArray *backAry = [NSMutableArray arrayWithArray:tmpAry];
+    [backAry removeObject:@""];
+    [backAry removeObject:@" "];
+    AllNameAry = backAry;
+    return backAry;
+}
+
++ (NSArray*)backMessageContent{
+    
+    if (AllMessageAry) {
+        return AllMessageAry;
+    }
+    
+    NSString *pathStr = [[NSBundle mainBundle] pathForResource:@"message" ofType:@"txt"];
+    NSError *error = nil;
+    NSString *allUrlStr = [NSString stringWithContentsOfFile:pathStr encoding:NSUTF8StringEncoding error:&error];
+    NSArray *tmpAry = [allUrlStr componentsSeparatedByString:@"\n"];
+    NSMutableArray *backAry = [NSMutableArray arrayWithArray:tmpAry];
+    [backAry removeObject:@""];
+    [backAry removeObject:@" "];
+    AllMessageAry = backAry;
+    return backAry;
 }
 
 @end

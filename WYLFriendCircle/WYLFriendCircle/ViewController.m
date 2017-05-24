@@ -8,7 +8,7 @@
 
 #import "WYLFriendCircleVC.h"
 #import "ViewController.h"
-
+#import "FriendCircleData.h"
 @interface ViewController ()
 
 @end
@@ -18,11 +18,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [FriendCircleData imageUrlFromFile];
+
 }
 
 - (IBAction)pressBt:(id)sender{
  
+    WYLFriendCircleVC *wxfcCtr = [[WYLFriendCircleVC alloc] init];
     
+    [self.navigationController pushViewController:wxfcCtr animated:YES];
     
 }
 

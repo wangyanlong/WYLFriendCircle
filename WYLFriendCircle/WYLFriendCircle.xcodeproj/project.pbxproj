@@ -60,6 +60,8 @@
 		184FBB5C1ED5C95F00B8E29F /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 184FBB591ED5C95F00B8E29F /* background.png */; };
 		184FBB5D1ED5C95F00B8E29F /* itlogo-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 184FBB5A1ED5C95F00B8E29F /* itlogo-01.png */; };
 		184FBB5E1ED5C95F00B8E29F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 184FBB5B1ED5C95F00B8E29F /* logo.png */; };
+		184FBB601ED5DC7100B8E29F /* WYLFriendCircleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184FBB5F1ED5DC7100B8E29F /* WYLFriendCircleVC.xib */; };
+		184FBB631ED5DE6200B8E29F /* FCTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 184FBB621ED5DE6200B8E29F /* FCTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +128,9 @@
 		184FBB591ED5C95F00B8E29F /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		184FBB5A1ED5C95F00B8E29F /* itlogo-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "itlogo-01.png"; sourceTree = "<group>"; };
 		184FBB5B1ED5C95F00B8E29F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		184FBB5F1ED5DC7100B8E29F /* WYLFriendCircleVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYLFriendCircleVC.xib; sourceTree = "<group>"; };
+		184FBB611ED5DE6200B8E29F /* FCTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCTextView.h; sourceTree = "<group>"; };
+		184FBB621ED5DE6200B8E29F /* FCTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +194,9 @@
 				184DCE2B1ED301060087BE4C /* FalseData */,
 				184DCE281ED2FEB80087BE4C /* WYLFriendCircleVC.h */,
 				184DCE291ED2FEB80087BE4C /* WYLFriendCircleVC.m */,
+				184FBB5F1ED5DC7100B8E29F /* WYLFriendCircleVC.xib */,
+				184FBB611ED5DE6200B8E29F /* FCTextView.h */,
+				184FBB621ED5DE6200B8E29F /* FCTextView.m */,
 			);
 			path = WYLFriendCircle;
 			sourceTree = "<group>";
@@ -333,6 +341,7 @@
 			files = (
 				184FBB411ED5C93000B8E29F /* Video-player_sound_bg0.png in Resources */,
 				184FBB381ED5C93000B8E29F /* Video-player_bar_bot.png in Resources */,
+				184FBB601ED5DC7100B8E29F /* WYLFriendCircleVC.xib in Resources */,
 				184FBB481ED5C93000B8E29F /* Video_btn_control.png in Resources */,
 				184FBB351ED5C93000B8E29F /* Video-player_bar@2x.png in Resources */,
 				184FBAFD1ED5143500B8E29F /* message.txt in Resources */,
@@ -393,6 +402,7 @@
 				184DCE151ED2FA760087BE4C /* AppDelegate.m in Sources */,
 				184FBB511ED5C93000B8E29F /* PlayerController.m in Sources */,
 				184FBB521ED5C93000B8E29F /* PlayerView.m in Sources */,
+				184FBB631ED5DE6200B8E29F /* FCTextView.m in Sources */,
 				184DCE121ED2FA760087BE4C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
