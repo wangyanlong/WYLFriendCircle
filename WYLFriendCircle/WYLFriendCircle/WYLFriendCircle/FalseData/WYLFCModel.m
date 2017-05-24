@@ -10,4 +10,10 @@
 
 @implementation WYLFCModel
 
++(NSString *)setMessageDict:(NSDictionary *)messageDict{
+    
+    return nil;
+    
+}
+
 @end
