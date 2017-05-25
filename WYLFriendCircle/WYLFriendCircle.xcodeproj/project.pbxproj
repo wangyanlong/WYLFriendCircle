@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18384D2E1ED681B10022EB2D /* FriendCircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18384D2C1ED681B10022EB2D /* FriendCircleCell.m */; };
+		18384D2F1ED681B10022EB2D /* FriendCircleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18384D2D1ED681B10022EB2D /* FriendCircleCell.xib */; };
+		18384D331ED6A5150022EB2D /* CellMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18384D311ED6A5150022EB2D /* CellMessageCell.m */; };
+		18384D341ED6A5150022EB2D /* CellMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18384D321ED6A5150022EB2D /* CellMessageCell.xib */; };
+		18384D3C1ED6A7E60022EB2D /* MyAsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18384D371ED6A7E60022EB2D /* MyAsyncImageView.m */; };
+		18384D3D1ED6A7E60022EB2D /* MyImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18384D391ED6A7E60022EB2D /* MyImageOperation.m */; };
+		18384D3E1ED6A7E60022EB2D /* MyImageOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 18384D3B1ED6A7E60022EB2D /* MyImageOperationQueue.m */; };
+		18384D411ED6AEA40022EB2D /* UIView+FC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18384D401ED6AEA40022EB2D /* UIView+FC.m */; };
 		184DCE121ED2FA760087BE4C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 184DCE111ED2FA760087BE4C /* main.m */; };
 		184DCE151ED2FA760087BE4C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 184DCE141ED2FA760087BE4C /* AppDelegate.m */; };
 		184DCE181ED2FA760087BE4C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184DCE171ED2FA760087BE4C /* ViewController.m */; };
@@ -65,6 +73,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18384D2B1ED681B10022EB2D /* FriendCircleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleCell.h; sourceTree = "<group>"; };
+		18384D2C1ED681B10022EB2D /* FriendCircleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleCell.m; sourceTree = "<group>"; };
+		18384D2D1ED681B10022EB2D /* FriendCircleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendCircleCell.xib; sourceTree = "<group>"; };
+		18384D301ED6A5150022EB2D /* CellMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellMessageCell.h; sourceTree = "<group>"; };
+		18384D311ED6A5150022EB2D /* CellMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellMessageCell.m; sourceTree = "<group>"; };
+		18384D321ED6A5150022EB2D /* CellMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellMessageCell.xib; sourceTree = "<group>"; };
+		18384D361ED6A7E60022EB2D /* MyAsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAsyncImageView.h; sourceTree = "<group>"; };
+		18384D371ED6A7E60022EB2D /* MyAsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAsyncImageView.m; sourceTree = "<group>"; };
+		18384D381ED6A7E60022EB2D /* MyImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyImageOperation.h; sourceTree = "<group>"; };
+		18384D391ED6A7E60022EB2D /* MyImageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyImageOperation.m; sourceTree = "<group>"; };
+		18384D3A1ED6A7E60022EB2D /* MyImageOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyImageOperationQueue.h; sourceTree = "<group>"; };
+		18384D3B1ED6A7E60022EB2D /* MyImageOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyImageOperationQueue.m; sourceTree = "<group>"; };
+		18384D3F1ED6AEA40022EB2D /* UIView+FC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FC.h"; sourceTree = "<group>"; };
+		18384D401ED6AEA40022EB2D /* UIView+FC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FC.m"; sourceTree = "<group>"; };
 		184DCE0D1ED2FA760087BE4C /* WYLFriendCircle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYLFriendCircle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		184DCE111ED2FA760087BE4C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		184DCE131ED2FA760087BE4C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -144,6 +166,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18384D351ED6A7D90022EB2D /* ImageView */ = {
+			isa = PBXGroup;
+			children = (
+				18384D361ED6A7E60022EB2D /* MyAsyncImageView.h */,
+				18384D371ED6A7E60022EB2D /* MyAsyncImageView.m */,
+				18384D381ED6A7E60022EB2D /* MyImageOperation.h */,
+				18384D391ED6A7E60022EB2D /* MyImageOperation.m */,
+				18384D3A1ED6A7E60022EB2D /* MyImageOperationQueue.h */,
+				18384D3B1ED6A7E60022EB2D /* MyImageOperationQueue.m */,
+			);
+			path = ImageView;
+			sourceTree = "<group>";
+		};
 		184DCE041ED2FA760087BE4C = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +223,7 @@
 		184DCE271ED2FE9B0087BE4C /* WYLFriendCircle */ = {
 			isa = PBXGroup;
 			children = (
+				18384D351ED6A7D90022EB2D /* ImageView */,
 				184FBB091ED5C92F00B8E29F /* 播放器 */,
 				184FBB251ED5C93000B8E29F /* 视频 */,
 				184FBB2D1ED5C93000B8E29F /* 图像 */,
@@ -195,8 +231,16 @@
 				184DCE281ED2FEB80087BE4C /* WYLFriendCircleVC.h */,
 				184DCE291ED2FEB80087BE4C /* WYLFriendCircleVC.m */,
 				184FBB5F1ED5DC7100B8E29F /* WYLFriendCircleVC.xib */,
+				18384D2B1ED681B10022EB2D /* FriendCircleCell.h */,
+				18384D2C1ED681B10022EB2D /* FriendCircleCell.m */,
+				18384D2D1ED681B10022EB2D /* FriendCircleCell.xib */,
+				18384D301ED6A5150022EB2D /* CellMessageCell.h */,
+				18384D311ED6A5150022EB2D /* CellMessageCell.m */,
+				18384D321ED6A5150022EB2D /* CellMessageCell.xib */,
 				184FBB611ED5DE6200B8E29F /* FCTextView.h */,
 				184FBB621ED5DE6200B8E29F /* FCTextView.m */,
+				18384D3F1ED6AEA40022EB2D /* UIView+FC.h */,
+				18384D401ED6AEA40022EB2D /* UIView+FC.m */,
 			);
 			path = WYLFriendCircle;
 			sourceTree = "<group>";
@@ -341,6 +385,7 @@
 			files = (
 				184FBB411ED5C93000B8E29F /* Video-player_sound_bg0.png in Resources */,
 				184FBB381ED5C93000B8E29F /* Video-player_bar_bot.png in Resources */,
+				18384D341ED6A5150022EB2D /* CellMessageCell.xib in Resources */,
 				184FBB601ED5DC7100B8E29F /* WYLFriendCircleVC.xib in Resources */,
 				184FBB481ED5C93000B8E29F /* Video_btn_control.png in Resources */,
 				184FBB351ED5C93000B8E29F /* Video-player_bar@2x.png in Resources */,
@@ -352,6 +397,7 @@
 				184FBB361ED5C93000B8E29F /* Video-player_bar_black.png in Resources */,
 				184FBAFE1ED5143500B8E29F /* name.txt in Resources */,
 				184FBB441ED5C93000B8E29F /* Video-player_sound_on.png in Resources */,
+				18384D2F1ED681B10022EB2D /* FriendCircleCell.xib in Resources */,
 				184FBB461ED5C93000B8E29F /* video_blow-on.png in Resources */,
 				184FBB551ED5C93000B8E29F /* icon2.jpg in Resources */,
 				184FBB431ED5C93000B8E29F /* Video-player_sound_off.png in Resources */,
@@ -395,14 +441,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				184DCE181ED2FA760087BE4C /* ViewController.m in Sources */,
+				18384D331ED6A5150022EB2D /* CellMessageCell.m in Sources */,
 				184DCE311ED43FE50087BE4C /* WYLFCModel.m in Sources */,
+				18384D411ED6AEA40022EB2D /* UIView+FC.m in Sources */,
+				18384D3D1ED6A7E60022EB2D /* MyImageOperation.m in Sources */,
+				18384D2E1ED681B10022EB2D /* FriendCircleCell.m in Sources */,
 				184FBB501ED5C93000B8E29F /* MovieView.m in Sources */,
+				18384D3E1ED6A7E60022EB2D /* MyImageOperationQueue.m in Sources */,
 				184DCE2E1ED3012E0087BE4C /* FriendCircleData.m in Sources */,
 				184DCE2A1ED2FEB80087BE4C /* WYLFriendCircleVC.m in Sources */,
 				184DCE151ED2FA760087BE4C /* AppDelegate.m in Sources */,
 				184FBB511ED5C93000B8E29F /* PlayerController.m in Sources */,
 				184FBB521ED5C93000B8E29F /* PlayerView.m in Sources */,
 				184FBB631ED5DE6200B8E29F /* FCTextView.m in Sources */,
+				18384D3C1ED6A7E60022EB2D /* MyAsyncImageView.m in Sources */,
 				184DCE121ED2FA760087BE4C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

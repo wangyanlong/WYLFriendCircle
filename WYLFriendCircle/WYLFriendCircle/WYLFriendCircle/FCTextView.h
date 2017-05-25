@@ -12,7 +12,7 @@
 
 
 @interface FCTextView : UITextView{
-    UILabel *placeholderLb;
+    
 }
 
 //@property (nonatomic, strong)FriendCircleCell *fcCell;

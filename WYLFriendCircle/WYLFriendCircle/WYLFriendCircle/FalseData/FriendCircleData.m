@@ -31,7 +31,16 @@ static NSArray *AllMessageAry;
         [dataAry addObject:fcModel];
     }
     
-    return nil;
+    [backDict setObject:dataAry forKey:@"data"];
+    [backDict setObject:[NSString stringWithFormat:@"%ld", currentPage + 1] forKey:@"page"];
+    if (kAllPage >= 5) {
+        [backDict setObject:@"0" forKey:@"isNext"];
+        [dataAry removeAllObjects];
+    }else{
+        [backDict setObject:@"1" forKey:@"isNext"];
+    }
+    kAllPage++;
+    return backDict;
 
 }
 
