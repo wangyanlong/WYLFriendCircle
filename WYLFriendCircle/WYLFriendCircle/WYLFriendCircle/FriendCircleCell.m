@@ -306,12 +306,133 @@
     
     if (cellModel.contentType == FC_OnlyTextContent) {
         
-//        contentHigh = [UIView backLinesInView: string:<#(NSString *)#> font:<#(UIFont *)#>]
+        contentHigh = [UIView backLinesInView:ScreenWidth-90 string:cellModel.contentTextStr font:[UIFont systemFontOfSize:14]];
+        contentHigh = (contentHigh < 30)?30:contentHigh;
+        cellModel.textContentHigh = contentHigh;
+        
+    }else if(cellModel.contentType == FC_OnlyPictureContent){
+        // 只有图片
+        NSInteger lineCount = (cellModel.imageAry.count-1)/3 + 1;
+        contentHigh = lineCount * CellImageHight + lineCount*5;
+        cellModel.imageContentHigh = contentHigh;
+    }
+    else if(cellModel.contentType == FC_OnlyLinkContent){
+        // 只有链接地址
+        contentHigh = LinkViewHight;
+    }
+    else if(cellModel.contentType == FC_TextAndPictureContent){
+        
+        contentHigh = [UIView backLinesInView:ScreenWidth-90 string:cellModel.contentTextStr font:[UIFont systemFontOfSize:14]];
+        contentHigh = (contentHigh < 30)?30:contentHigh;
+        cellModel.textContentHigh = contentHigh;
+        
+        NSInteger lineCount = (cellModel.imageAry.count-1)/3 + 1;
+        contentHigh = lineCount * CellImageHight + lineCount*5;
+        cellModel.imageContentHigh = contentHigh;
+        
+        contentHigh = cellModel.textContentHigh + cellModel.imageContentHigh;
+    }
+    else if(cellModel.contentType == FC_TextAndLinkContent){
+        
+        contentHigh = [UIView backLinesInView:ScreenWidth-90 string:cellModel.contentTextStr font:[UIFont systemFontOfSize:14]];
+        contentHigh = (contentHigh < 30)?30:contentHigh;
+        cellModel.textContentHigh = contentHigh;
+        
+        contentHigh += LinkViewHight;
+    }
+    else if(cellModel.contentType == FC_OnlyMovieContent){
+        contentHigh = MovieViewHight;
+    }
+    else if(cellModel.contentType == FC_TextAndMovieContent){
+        contentHigh = [UIView backLinesInView:ScreenWidth-90 string:cellModel.contentTextStr font:[UIFont systemFontOfSize:14]];
+        contentHigh = (contentHigh < 30)?30:contentHigh;
+        cellModel.textContentHigh = contentHigh;
+        contentHigh += MovieViewHight;
+    }
+
+    cellModel.messageContentHigh = 0;
+    cellModel.cellHighAry = [NSMutableArray array];
+    cellModel.cellContentAry = [NSMutableArray array];
+    
+    for (int i = 0; i < cellModel.messageAry.count; i++) {
+        
+        NSDictionary *infoDict = [cellModel.messageAry objectAtIndex:i];
+        NSMutableString *messageStr = [NSMutableString string];
+        int status = [[infoDict objectForKey:@"status"] intValue];
+        
+        if (status == 0) {
+            [messageStr appendFormat:@"楼主回复%@:",[infoDict objectForKey:@"name"]];
+        }else if(status == 1){
+            [messageStr appendFormat:@"%@回复楼主:",[infoDict objectForKey:@"name"]];
+        }
+        else if(status == 2){
+            [messageStr appendFormat:@"楼主:"];
+        }
+        else if(status == 3){
+            [messageStr appendFormat:@"%@:",[infoDict objectForKey:@"name"]];
+        }
+        
+        [messageStr appendString:[infoDict objectForKey:@"msg"]];
+        
+        float cellHeightFloat = [UIView backLinesInView:ScreenWidth-90 string:messageStr font:[UIFont systemFontOfSize:12]];
+        cellModel.messageContentHigh += cellHeightFloat;
+        [cellModel.cellHighAry addObject:[NSNumber numberWithFloat:cellHeightFloat]];
+        [cellModel.cellContentAry addObject:messageStr];
         
     }
     
-    return contentHigh;
+    return CellBaseHight + contentHigh + cellModel.messageContentHigh + cellModel.approveContentHigh;
     
+}
+
+#pragma mark - tableview delegate
+//留言评论
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.cellModel.messageAry.count;
+}
+// 高度一定缓存
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return [[self.cellModel.cellHighAry objectAtIndex:indexPath.row] floatValue];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    CellMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    
+    if (!cell) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"CellMessageCell" owner:nil options:nil] objectAtIndex:0];
+    }
+    
+    [cell messagePro:[self.cellModel.messageAry objectAtIndex:indexPath.row] content:[self.cellModel.cellContentAry objectAtIndex:indexPath.row]];
+    cell.tag = indexPath.row;
+    
+    return cell;
+
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    CellMessageCell *cell = (CellMessageCell*)[tableView cellForRowAtIndexPath:indexPath];
+    if ([_delegate respondsToSelector:@selector(cellSelectSendMessage:subCell:)]) {
+        [_delegate cellSelectSendMessage:self subCell:cell];
+    }
+    
+}
+
+#pragma mark - Gesture handle
+- (void)tapImge:(UITapGestureRecognizer*)tapGes{
+    
+    if ([_delegate respondsToSelector:@selector(cellImagePress:images:)]) {
+        [_delegate cellImagePress:tapGes.view.tag images:self.cellModel.imageAry];
+    }
+}
+
+- (void)tapLink:(UITapGestureRecognizer*)tapGes{
+    if ([_delegate respondsToSelector:@selector(cellLinkPress:)]) {
+        [_delegate cellLinkPress:self.cellModel.linkInfoDict];
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

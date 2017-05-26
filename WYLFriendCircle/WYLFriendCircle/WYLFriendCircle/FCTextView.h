@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "FriendCircleCell.h"
-//#import "CellMessageCell.h"
+#import "FriendCircleCell.h"
+#import "CellMessageCell.h"
 
 
 @interface FCTextView : UITextView{
     
 }
 
-//@property (nonatomic, strong)FriendCircleCell *fcCell;
-//@property (nonatomic, strong)CellMessageCell *messageCell;
+@property (nonatomic, strong)FriendCircleCell *fcCell;
+@property (nonatomic, strong)CellMessageCell *messageCell;
 
 @end

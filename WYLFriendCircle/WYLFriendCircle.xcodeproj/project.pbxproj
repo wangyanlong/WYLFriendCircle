@@ -15,6 +15,10 @@
 		18384D3D1ED6A7E60022EB2D /* MyImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18384D391ED6A7E60022EB2D /* MyImageOperation.m */; };
 		18384D3E1ED6A7E60022EB2D /* MyImageOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 18384D3B1ED6A7E60022EB2D /* MyImageOperationQueue.m */; };
 		18384D411ED6AEA40022EB2D /* UIView+FC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18384D401ED6AEA40022EB2D /* UIView+FC.m */; };
+		18384D491ED8107A0022EB2D /* FCImageViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 18384D441ED8107A0022EB2D /* FCImageViewCtr.m */; };
+		18384D4A1ED8107A0022EB2D /* FCImageViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18384D451ED8107A0022EB2D /* FCImageViewCtr.xib */; };
+		18384D4B1ED8107A0022EB2D /* FCLinkViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 18384D471ED8107A0022EB2D /* FCLinkViewCtr.m */; };
+		18384D4C1ED8107A0022EB2D /* FCLinkViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18384D481ED8107A0022EB2D /* FCLinkViewCtr.xib */; };
 		184DCE121ED2FA760087BE4C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 184DCE111ED2FA760087BE4C /* main.m */; };
 		184DCE151ED2FA760087BE4C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 184DCE141ED2FA760087BE4C /* AppDelegate.m */; };
 		184DCE181ED2FA760087BE4C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184DCE171ED2FA760087BE4C /* ViewController.m */; };
@@ -88,6 +92,12 @@
 		18384D3F1ED6AEA40022EB2D /* UIView+FC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FC.h"; sourceTree = "<group>"; };
 		18384D401ED6AEA40022EB2D /* UIView+FC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FC.m"; sourceTree = "<group>"; };
 		18384D421ED7D8A40022EB2D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		18384D431ED8107A0022EB2D /* FCImageViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCImageViewCtr.h; sourceTree = "<group>"; };
+		18384D441ED8107A0022EB2D /* FCImageViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCImageViewCtr.m; sourceTree = "<group>"; };
+		18384D451ED8107A0022EB2D /* FCImageViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCImageViewCtr.xib; sourceTree = "<group>"; };
+		18384D461ED8107A0022EB2D /* FCLinkViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCLinkViewCtr.h; sourceTree = "<group>"; };
+		18384D471ED8107A0022EB2D /* FCLinkViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCLinkViewCtr.m; sourceTree = "<group>"; };
+		18384D481ED8107A0022EB2D /* FCLinkViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCLinkViewCtr.xib; sourceTree = "<group>"; };
 		184DCE0D1ED2FA760087BE4C /* WYLFriendCircle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYLFriendCircle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		184DCE111ED2FA760087BE4C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		184DCE131ED2FA760087BE4C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -233,6 +243,12 @@
 				184DCE281ED2FEB80087BE4C /* WYLFriendCircleVC.h */,
 				184DCE291ED2FEB80087BE4C /* WYLFriendCircleVC.m */,
 				184FBB5F1ED5DC7100B8E29F /* WYLFriendCircleVC.xib */,
+				18384D431ED8107A0022EB2D /* FCImageViewCtr.h */,
+				18384D441ED8107A0022EB2D /* FCImageViewCtr.m */,
+				18384D451ED8107A0022EB2D /* FCImageViewCtr.xib */,
+				18384D461ED8107A0022EB2D /* FCLinkViewCtr.h */,
+				18384D471ED8107A0022EB2D /* FCLinkViewCtr.m */,
+				18384D481ED8107A0022EB2D /* FCLinkViewCtr.xib */,
 				18384D2B1ED681B10022EB2D /* FriendCircleCell.h */,
 				18384D2C1ED681B10022EB2D /* FriendCircleCell.m */,
 				18384D2D1ED681B10022EB2D /* FriendCircleCell.xib */,
@@ -393,6 +409,7 @@
 				184FBB351ED5C93000B8E29F /* Video-player_bar@2x.png in Resources */,
 				184FBAFD1ED5143500B8E29F /* message.txt in Resources */,
 				184FBB3D1ED5C93000B8E29F /* Video-player_bar_grad.png in Resources */,
+				18384D4C1ED8107A0022EB2D /* FCLinkViewCtr.xib in Resources */,
 				184FBB391ED5C93000B8E29F /* Video-player_bar_bot@2x.png in Resources */,
 				184FBB491ED5C93000B8E29F /* Video_btn_control@2x.png in Resources */,
 				184FBB3B1ED5C93000B8E29F /* Video-player_bar_bot_gradd.png in Resources */,
@@ -420,6 +437,7 @@
 				184FBB4A1ED5C93000B8E29F /* video_mini_pause.png in Resources */,
 				184FBB4B1ED5C93000B8E29F /* video_mini_play.png in Resources */,
 				184FBB4F1ED5C93000B8E29F /* 11.mp4 in Resources */,
+				18384D4A1ED8107A0022EB2D /* FCImageViewCtr.xib in Resources */,
 				184FBB371ED5C93000B8E29F /* Video-player_bar_black@2x.png in Resources */,
 				184FBB401ED5C93000B8E29F /* Video-player_bottom_bg@2x.png in Resources */,
 				184DCE1B1ED2FA760087BE4C /* Main.storyboard in Resources */,
@@ -442,8 +460,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18384D491ED8107A0022EB2D /* FCImageViewCtr.m in Sources */,
 				184DCE181ED2FA760087BE4C /* ViewController.m in Sources */,
 				18384D331ED6A5150022EB2D /* CellMessageCell.m in Sources */,
+				18384D4B1ED8107A0022EB2D /* FCLinkViewCtr.m in Sources */,
 				184DCE311ED43FE50087BE4C /* WYLFCModel.m in Sources */,
 				18384D411ED6AEA40022EB2D /* UIView+FC.m in Sources */,
 				18384D3D1ED6A7E60022EB2D /* MyImageOperation.m in Sources */,

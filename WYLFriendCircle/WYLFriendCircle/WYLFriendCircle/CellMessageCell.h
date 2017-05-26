@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface CellMessageCell : UITableViewCell
+{
+    IBOutlet UILabel *messageLb;
+}
+
+- (void)messagePro:(NSDictionary*)messageDict content:(NSString*)content;
 
 @end
