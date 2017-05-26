@@ -5,6 +5,7 @@
 //  Created by wyl on 2017/5/22.
 //  Copyright © 2017年 wyl. All rights reserved.
 //
+#import "UIView+FC.h"
 #import "FCImageViewCtr.h"
 #import "FCLinkViewCtr.h"
 #import "FCTextView.h"
@@ -91,7 +92,6 @@
     [theTableView setTableFooterView:theFootView];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyDidAppear:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
     [self netLoadData:currentPage];
     [self addFlushViewFromSeverDataFct];
@@ -105,12 +105,89 @@
     // Dispose of any resources that can be recreated.
 }
 
+// 点赞
 - (IBAction)approveBt:(UIButton*)sender{
 
+    FriendCircleCell *cell = (FriendCircleCell*)[[[[sender superview] superview] superview] superview];
+    if ([cell isKindOfClass:[FriendCircleCell class]]) {
+        if ([cell.cellModel.approveAry containsObject:@"楼主"]) {
+            [cell.cellModel.approveAry removeObject:@"楼主"];
+        }else {
+            [cell.cellModel.approveAry addObject:@"楼主"];
+        }
+    }
+    NSMutableArray *indexAry = [NSMutableArray array];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:cell.tag inSection:0];
+    [indexAry addObject:indexPath];
+    [theTableView reloadRowsAtIndexPaths:indexAry withRowAnimation:UITableViewRowAnimationNone];
+    
+    [self hiddenSubMenu];
+    
 }
 
+//回复
 - (IBAction)messageBt:(UIButton*)sender{
     
+    [self hiddenSubMenu];
+    fcTextView.text = @" ";
+    float height = [UIView backLinesInView:fcTextView.frame.size.width string:fcTextView.text font:fcTextView.font];
+    keyBoardHeadV.frame = ({
+        CGRect rect = keyBoardHeadV.frame;
+        if (height > 0 && height < 160) {
+            rect.size.height = 10 + height;
+        }
+        rect.origin.y = inputAccessView.frame.size.height - rect.size.height;
+        rect;
+    });
+    [theTextField becomeFirstResponder];
+    FriendCircleCell *cell = (FriendCircleCell*)[[[[sender superview] superview] superview] superview];
+    fcTextView.fcCell = cell;
+    fcTextView.messageCell = nil;
+    positionY = CGRectGetMaxY(cell.frame);
+    
+}
+
+#pragma mark - 手势&通知
+
+- (void)keyDidAppear:(NSNotification*)notifi{
+    
+    //查看输入框里是否有文字,如果有文字调整frame的高度
+    float height = [UIView backLinesInView:fcTextView.frame.size.width string:fcTextView.text font:fcTextView.font];
+    
+    keyBoardHeadV.frame = ({
+    
+        CGRect rect = keyBoardHeadV.frame;
+        if (height > 0 && height < 160) {
+            rect.size.height = 10 + height;
+        }
+        rect.origin.y = inputAccessView.frame.size.height - rect.size.height;
+        rect;
+        
+    });
+    [fcTextView becomeFirstResponder];
+    
+    CGRect rect = [[notifi.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    keyHight = rect.size.height;
+    
+    NSNumber *duration = [notifi.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    [self performSelector:@selector(handleOffsetX) withObject:nil afterDelay:[duration floatValue]];
+    
+}
+
+- (void)handleOffsetX{
+    
+    float contentOffY = positionY + keyHight - ScreenHeight;
+    contentOffY = contentOffY - inputAccessView.frame.size.height + keyBoardHeadV.frame.size.height;
+    if (contentOffY < 0)
+        contentOffY = 0;
+    
+    [theTableView setContentOffset:CGPointMake(0, contentOffY) animated:YES];
+    
+}
+
+- (void)tapInputView:(UITapGestureRecognizer*)gesture{
+    [fcTextView resignFirstResponder];
+    [theTextField resignFirstResponder];
 }
 
 #pragma mark - loadData
@@ -306,6 +383,21 @@
     approveAndcommentView.frame = tmpRect;
     approveAndcommentView.hidden = NO;
     
+    FriendCircleCell *cell = (FriendCircleCell*)[[[sender superview] superview] superview];
+    if ([cell isKindOfClass:[FriendCircleCell class]]) {
+        if ([cell.cellModel.approveAry containsObject:@"楼主"]) {
+            [approveBt setTitle:@" 取消" forState:UIControlStateNormal];
+        }else {
+            [approveBt setTitle:@"   赞" forState:UIControlStateNormal];
+        }
+    }
+    
+    [UIView animateWithDuration:0.4 animations:^(void){
+        
+        CGRect tmpRect = approveAndcommentView.frame;
+        tmpRect.origin.x  = sender.frame.origin.x - approveAndcommentView.frame.size.width - 10;
+        approveAndcommentView.frame = tmpRect;
+    }];
     
 }
 
@@ -332,6 +424,38 @@
     [theTextField becomeFirstResponder];
 }
 
+#pragma mark - textView delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [fcTextView resignFirstResponder];
+    return YES;
+}
+
+- (void)textViewDidChange:(UITextView *)textView{
+    float height = [UIView backLinesInView:textView.frame.size.width string:textView.text font:textView.font];
+    keyBoardHeadV.frame = ({
+        CGRect rect = keyBoardHeadV.frame;
+        if (height > 0 && height < 160) {
+            rect.size.height = 15 + height;
+        }
+        rect.origin.y = inputAccessView.frame.size.height - rect.size.height;
+        rect;
+    });
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    
+    if ([text isEqual:@"\n"]) {
+        [fcTextView  resignFirstResponder];
+        [theTextField resignFirstResponder];
+        [self senderMessageFrom:nil];
+    }
+    return YES;
+}
+
+- (void)senderMessageFrom:(NSDictionary*)infoDict{
+
+}
 
 /*
 #pragma mark - Navigation
