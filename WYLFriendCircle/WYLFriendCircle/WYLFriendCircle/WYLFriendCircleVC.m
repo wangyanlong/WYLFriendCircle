@@ -74,6 +74,11 @@
     UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapInputView:)];
     [inputAccessView addGestureRecognizer:tapGes];
     
+    approveAndcommentView.hidden = NO;
+    CGRect rect = approveAndcommentView.frame;
+    rect.origin.y = 0;
+    approveAndcommentView.frame = rect;
+    approveAndcommentView.layer.cornerRadius = 5;
     [approveAndcommentView removeFromSuperview];
     
     fcImageVCtr = [[FCImageViewCtr alloc] init];
@@ -195,7 +200,7 @@
 //被动加载
 - (void)threadReviveMessage{
     
-    return;
+//    return;
     
     NSTimer *timer = [NSTimer timerWithTimeInterval:3 target:self selector:@selector(netDataFromService) userInfo:nil repeats:YES];
     
@@ -396,6 +401,7 @@
         
         CGRect tmpRect = approveAndcommentView.frame;
         tmpRect.origin.x  = sender.frame.origin.x - approveAndcommentView.frame.size.width - 10;
+        tmpRect.origin.y = 0;
         approveAndcommentView.frame = tmpRect;
     }];
     
@@ -455,6 +461,47 @@
 
 - (void)senderMessageFrom:(NSDictionary*)infoDict{
 
+    if (fcTextView.text.length > 0) {
+        
+        if (fcTextView.messageCell) {
+            NSMutableArray *messageAry = fcTextView.fcCell.cellModel.messageAry;
+            NSInteger index = fcTextView.messageCell.tag;
+            
+            NSMutableDictionary *messDict = [NSMutableDictionary dictionary];
+            [messDict setObject:fcTextView.text forKey:@"msg"];
+            [messDict setObject:@"0" forKey:@"status"];
+            if (messageAry.count > index) {
+                NSDictionary *tmpDict = [messageAry objectAtIndex:index];
+                [messDict setObject:[tmpDict objectForKey:@"name"] forKey:@"name"];
+                [messageAry insertObject:messDict atIndex:index+1];
+            }
+        }else{
+            NSMutableArray *messageAry = fcTextView.fcCell.cellModel.messageAry;
+            NSMutableDictionary *messDict = [NSMutableDictionary dictionary];
+            [messDict setObject:@"楼主" forKey:@"name"];
+            [messDict setObject:fcTextView.text forKey:@"msg"];
+            [messDict setObject:@"2" forKey:@"status"];
+            [messageAry addObject:messDict];
+        }
+        NSMutableArray *indexAry = [NSMutableArray array];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:fcTextView.fcCell.tag inSection:0];
+        [indexAry addObject:indexPath];
+        [theTableView reloadRowsAtIndexPaths:indexAry withRowAnimation:UITableViewRowAnimationNone];
+        
+    }
+    fcTextView.text = @"";
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    [self hiddenSubMenu];
+    if (scrollView.contentOffset.y >= scrollView.contentSize.height - scrollView.frame.size.height + 20) {
+        // 拉倒底部，作判断加载新的数据
+        [self netLoadData:currentPage];
+    }
+    else if(scrollView.contentOffset.y < - 40){
+        // 重新刷新数据
+        
+    }
 }
 
 /*

@@ -12,7 +12,22 @@
 
 +(NSString *)setMessageDict:(NSDictionary *)messageDict{
     
-    return nil;
+    int status = [[messageDict objectForKey:@"from"] intValue];
+    NSMutableString *messageStr = [NSMutableString string];
+    
+    if (status == 0) {
+        [messageStr appendFormat:@"楼主回复%@:",[messageDict objectForKey:@"name"]];
+    }else if(status == 1){
+        [messageStr appendFormat:@"%@回复楼主:",[messageDict objectForKey:@"name"]];
+    }
+    else if(status == 2){
+        [messageStr appendFormat:@"楼主:"];
+    }
+    else if(status == 3){
+        [messageStr appendFormat:@"%@:",[messageDict objectForKey:@"name"]];
+    }
+    [messageStr appendString:[messageDict objectForKey:@"msg"]];
+    return messageStr;
     
 }
 

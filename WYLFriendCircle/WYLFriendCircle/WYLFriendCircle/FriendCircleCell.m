@@ -349,6 +349,20 @@
         cellModel.textContentHigh = contentHigh;
         contentHigh += MovieViewHight;
     }
+    
+    // 点赞 高度
+    if (cellModel.approveAry.count > 0) {
+        NSMutableString *approveStr = [NSMutableString stringWithString:@"       "];
+        [approveStr appendString:[cellModel.approveAry objectAtIndex:0]];
+        for (int i = 1; i < cellModel.approveAry.count; i++) {
+            [approveStr appendFormat:@",%@",[cellModel.approveAry objectAtIndex:i]];
+        }
+        cellModel.approveContentStr = approveStr;
+        cellModel.approveContentHigh = [UIView backLinesInView:ScreenWidth-90 string:approveStr font:[UIFont systemFontOfSize:12]];
+    }else{
+        cellModel.approveContentStr  = @"";
+        cellModel.approveContentHigh = 0;
+    }
 
     cellModel.messageContentHigh = 0;
     cellModel.cellHighAry = [NSMutableArray array];
