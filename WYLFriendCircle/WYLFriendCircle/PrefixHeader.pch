@@ -1,0 +1,11 @@
+//
+//  PrefixHeader.pch
+//  WYLFriendCircle
+//
+//  Created by wyl on 2017/5/26.
+//  Copyright © 2017年 wyl. All rights reserved.
+//
+
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+#define NavHeight 64

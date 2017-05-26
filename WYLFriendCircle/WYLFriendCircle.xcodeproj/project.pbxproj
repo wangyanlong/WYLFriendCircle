@@ -87,6 +87,7 @@
 		18384D3B1ED6A7E60022EB2D /* MyImageOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyImageOperationQueue.m; sourceTree = "<group>"; };
 		18384D3F1ED6AEA40022EB2D /* UIView+FC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FC.h"; sourceTree = "<group>"; };
 		18384D401ED6AEA40022EB2D /* UIView+FC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FC.m"; sourceTree = "<group>"; };
+		18384D421ED7D8A40022EB2D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		184DCE0D1ED2FA760087BE4C /* WYLFriendCircle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYLFriendCircle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		184DCE111ED2FA760087BE4C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		184DCE131ED2FA760087BE4C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -216,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				184DCE111ED2FA760087BE4C /* main.m */,
+				18384D421ED7D8A40022EB2D /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -576,6 +578,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HS686A3WXM;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WYLFriendCircle/PrefixHeader.pch";
 				INFOPLIST_FILE = WYLFriendCircle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.WYLFriendCircle;
@@ -588,6 +592,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HS686A3WXM;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WYLFriendCircle/PrefixHeader.pch";
 				INFOPLIST_FILE = WYLFriendCircle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.WYLFriendCircle;

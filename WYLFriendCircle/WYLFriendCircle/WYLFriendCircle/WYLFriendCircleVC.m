@@ -9,9 +9,6 @@
 #import "WYLFriendCircleVC.h"
 #import "FriendCircleData.h"
 
-#define ScreenWidth [UIScreen mainScreen].bounds.size.width
-#define ScreenHeight [UIScreen mainScreen].bounds.size.height
-
 @interface WYLFriendCircleVC ()<UITextViewDelegate,UITableViewDelegate, UITableViewDataSource>{
     
     IBOutlet UIView *theHeadView;
